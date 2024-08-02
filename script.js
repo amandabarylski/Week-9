@@ -155,6 +155,7 @@ startingDeck.cards.push(new Card('King of Clubs', 13))
 startingDeck.cards.push(new Card('Ace of Clubs', 14))
 
 //I also made the two players before working on the cards, but further down so that they'd be just above the other functions.
+//I changed the names later when I realized I wanted to use player1 and player2 as the parameters for a function, to prevent confusion.
 let Ed = new Player('Ed')
 let Al = new Player('Al')
 

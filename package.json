@@ -1,0 +1,11 @@
+{
+  "name": "week-nine",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000W\u0000e\u0000e\u0000k\u0000-\u00009\u0000\r\u0000 \u0000",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
