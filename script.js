@@ -177,7 +177,7 @@ startingDeck.shuffleAndDeal(Ed.deck, Al.deck)
 //My initial idea was to write the game as a function that iterates the play via a for loop.
 const game = (player1, player2) => {
     for (let i = 0; i < player1.deck.length; i++) {
-        console.log(`${player1.name} played a ${player1.deck[i].name}. ${player2.name} played a ${player2.deck[i].name}.`)
+        console.log(`${player1.name} played the ${player1.deck[i].name}. ${player2.name} played the ${player2.deck[i].name}.`)
         if (player1.deck[i].value > player2.deck[i].value) {
             player1.points += 1
             console.log(`${player1.name} gets a point!`)
@@ -198,3 +198,5 @@ const game = (player1, player2) => {
 //Then I forgot to call the name of the players in the return, and had to edit that.
 //It worked!
 game(Ed, Al)
+//I refreshed the page a few times to continue testing the combination of the shuffle and game functions.
+//The shuffled results were different each time, and while Ed won most of the several attempts it's not due to any bias in the shuffle.
