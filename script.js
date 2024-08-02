@@ -155,8 +155,8 @@ startingDeck.cards.push(new Card('King of Clubs', 13))
 startingDeck.cards.push(new Card('Ace of Clubs', 14))
 
 //I also made the two players before working on the cards, but further down so that they'd be just above the other functions.
-let player1 = new Player('Player 1')
-let player2 = new Player('Player 2')
+let Ed = new Player('Ed')
+let Al = new Player('Al')
 
 //Time for a test!
 // startingDeck.deal(player1.deck, player2.deck)
@@ -169,7 +169,32 @@ let player2 = new Player('Player 2')
 // console.log(startingDeck.shuffle())
 
 //Another deal test:
-startingDeck.shuffleAndDeal(player1.deck, player2.deck)
-// console.log(player1.deck)
-// console.log(player2.deck)
+startingDeck.shuffleAndDeal(Ed.deck, Al.deck)
+// console.log(Ed.deck)
+// console.log(Al.deck)
 //And it works! Commenting out the test console.logs, but leaving the shuffleAndDeal as it successfully randomizes each reload.
+
+//My initial idea was to write the game as a function that iterates the play via a for loop.
+const game = (player1, player2) => {
+    for (let i = 0; i < player1.deck.length; i++) {
+        console.log(`${player1.name} played a ${player1.deck[i].name}. ${player2.name} played a ${player2.deck[i].name}.`)
+        if (player1.deck[i].value > player2.deck[i].value) {
+            player1.points += 1
+            console.log(`${player1.name} gets a point!`)
+        } else if (player1.deck[i].value < player2.deck[i].value) {
+            player2.points += 1
+            console.log(`${player2.name} gets a point!`)
+        }
+    }
+    if (player1.points > player2.points) {
+        return console.log(`${player1.name} got ${player1.points} points. ${player2.name} got ${player2.points} points. ${player1.name} is the winner!`)
+    } else if (player1.points < player2.points) {
+        return console.log(`${player1.name} got ${player1.points} points. ${player2.name} got ${player2.points} points. ${player2.name} is the winner!`)
+    } else return console.log(`${player1.name} got ${player1.points} points. ${player2.name} also got ${player2.points} points. It's a tie!`)
+}
+
+//In order to test it, I called the game with my players. Since it comes after the shuffleAndDeal, I don't have to repeat that step.
+//With the test, I realized I forgot to call the value of the cards when comparing. After editing, I saved and checked again.
+//Then I forgot to call the name of the players in the return, and had to edit that.
+//It worked!
+game(Ed, Al)
